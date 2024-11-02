@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* body {
+    font-family: "Dosis", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; 
+    background-color: #f4f4f4;
+    text-align: center;
+} */
+ body{
+    background-color: #d9d9d9;
+ }
+.animimain {
+    display: flex;
+    justify-content:space-between;
+    margin-top: 300px;
+    margin-bottom: 80px;
+   
+}
+.spicespage_container {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    z-index: 999;
+    
+  
+}
+.spicespage_center-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease-in-out;
+}
+.spicespage_center-logo img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+#spicespage_menu {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -125px 0 0 -125px;
+    list-style: none;
+    font-size: 200%;
+}
+.spicespage_menu-button {
+    opacity: 0;
+    z-index: -1;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -125px 0 0 -125px;
+    border-radius: 50%;
+    background-size: 100%;
+    overflow: hidden;
+    text-decoration: none;
+}
+#spicespage_menu:not(:target) > a:first-of-type,
+#spicespage_menu:target > a:last-of-type {
+    opacity: 1;
+    z-index: 1;
+}
+.spicespage_menu-item {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -45px;
+    border-radius: 50%;
+    background-color: #424242;
+    transform: translate(0px, 0px);
+    transition: transform 500ms, opacity 500ms;
+    z-index: -2;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.spicespage_menu-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* Positioning 12 items in a circular layout */
+#spicespage_menu:target > .spicespage_menu-item:nth-child(3) { transform: rotate(0deg) translate(300px) rotate(0deg); transition-delay: 0s; }
+#spicespage_menu:target > .spicespage_menu-item:nth-child(4) { transform: rotate(30deg) translate(300px) rotate(-30deg); transition-delay: 0.1s; }
+#spicespage_menu:target > .spicespage_menu-item:nth-child(5) { transform: rotate(60deg) translate(300px) rotate(-60deg); transition-delay: 0.2s; }
+#spicespage_menu:target > .spicespage_menu-item:nth-child(6) { transform: rotate(90deg) translate(300px) rotate(-90deg); transition-delay: 0.3s; }
+#spicespage_menu:target > .spicespage_menu-item:nth-child(7) { transform: rotate(120deg) translate(300px) rotate(-120deg); transition-delay: 0.4s; }
+#spicespage_menu:target > .spicespage_menu-item:nth-child(8) { transform: rotate(150deg) translate(300px) rotate(-150deg); transition-delay: 0.5s; }
+#spicespage_menu:target > .spicespage_menu-item:nth-child(9) { transform: rotate(180deg) translate(300px) rotate(-180deg); transition-delay: 0.6s;}
+#spicespage_menu:target > .spicespage_menu-item:nth-child(10) { 
+    transform: rotate(210deg) translate(300px) rotate(-210deg); 
+    transition-delay: 0.6s; 
+}
+#spicespage_menu:target > .spicespage_menu-item:nth-child(11) { 
+    transform: rotate(240deg) translate(300px) rotate(-240deg); 
+    transition-delay: 0.7s; 
+}
+#spicespage_menu:target > .spicespage_menu-item:nth-child(12) { 
+    transform: rotate(270deg) translate(300px) rotate(-270deg); 
+    transition-delay: 0.8s; 
+}
+#spicespage_menu:target > .spicespage_menu-item:nth-child(13) { 
+    transform: rotate(300deg) translate(300px) rotate(-300deg); 
+    transition-delay: 0.9s; 
+}
+#spicespage_menu:target > .spicespage_menu-item:nth-child(14) { 
+    transform: rotate(330deg) translate(300px) rotate(-330deg); 
+    transition-delay: 1s; 
+}
+/* Responsive styling */
+@media (max-width: 500px) {
+    .spicespage_container {
+        width: 300px;
+        height: 300px;
+    }
+    .spicespage_center-logo {
+        width: 80px;
+        height: 80px;
+    }
+    #spicespage_menu {
+        width: 150px;
+        height: 150px;
+        margin: -62px 0 0 -62px;
+    }
+    .spicespage_menu-button {
+        width: 150px;
+        height: 150px;
+        margin: -75px 0 0 -75px;
+    }
+    .spicespage_menu-item {
+        width: 45px;
+        height: 45px;
+        margin: -35px;
+    }
+   
+    #spicespage_menu:target > .spicespage_menu-item:nth-child(3) { transform: rotate(0deg) translate(90px) rotate(0deg); }
+    #spicespage_menu:target > .spicespage_menu-item:nth-child(4) { transform: rotate(30deg) translate(90px) rotate(-30deg); }
+    #spicespage_menu:target > .spicespage_menu-item:nth-child(5) { transform: rotate(60deg) translate(90px) rotate(-60deg); }
+    #spicespage_menu:target > .spicespage_menu-item:nth-child(6) { transform: rotate(90deg) translate(90px) rotate(-90deg); }
+    #spicespage_menu:target > .spicespage_menu-item:nth-child(7) { transform: rotate(120deg) translate(90px) rotate(-120deg); }
+    #spicespage_menu:target > .spicespage_menu-item:nth-child(8) { transform: rotate(150deg) translate(90px) rotate(-150deg); }
+    #spicespage_menu:target > .spicespage_menu-item:nth-child(9) { transform: rotate(180deg) translate(90px) rotate(-180deg); }
+    #spicespage_menu:target > .spicespage_menu-item:nth-child(10) { transform: rotate(210deg) translate(90px) rotate(-210deg); }
+    #spicespage_menu:target > .spicespage_menu-item:nth-child(11) { transform: rotate(240deg) translate(90px) rotate(-240deg); }
+    #spicespage_menu:target > .spicespage_menu-item:nth-child(12) { transform: rotate(270deg) translate(90px) rotate(-270deg); }
+    #spicespage_menu:target > .spicespage_menu-item:nth-child(13) { transform: rotate(300deg) translate(90px) rotate(-300deg); }
+    #spicespage_menu:target > .spicespage_menu-item:nth-child(14) { transform: rotate(330deg) translate(90px) rotate(-330deg); }
+    #leftImage{
+    
+        display: none;
+    
+}
+#rightImage{
+    display: none;
+}
+}
+
+.hidden {
+    transform: translateX(680px); /* Move left image away */
+}
+
+.hidden-right {
+    transform: translateX(-680px); /* Move right image away */
+}
+
+
+
+.sideimage-container {
+    display: flex;
+    align-items: center;
+  
+    transition: transform 1.5s ease; /* Slow transition */
+}
+/* .animimain img {
+    height: 100px;
+    border-radius: 50%;
+} */
+
+#leftImage{
+    height: 100px;
+    border-radius: 50%;
+}
+#rightImage{
+    height: 100px;
+    border-radius: 50%;
+}

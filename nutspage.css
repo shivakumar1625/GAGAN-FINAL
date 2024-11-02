@@ -1,0 +1,199 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #d9d9d9;
+ }
+
+.animimain {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 200px;
+    margin-bottom: 50px;
+ 
+}
+.ricepage_container {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    z-index: 999;
+}
+
+.ricepage_center-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease-in-out;
+    user-select: none;
+}
+
+.ricepage_center-logo img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+#ricepage_menu {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -125px 0 0 -125px;
+    list-style: none;
+    font-size: 200%;
+}
+
+.ricepage_menu-button {
+    opacity: 0;
+    z-index: -1;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -125px 0 0 -125px;
+    border-radius: 50%;
+    background-size: 100%;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+#ricepage_menu:not(:target) > a:first-of-type,
+#ricepage_menu:target > a:last-of-type {
+    opacity: 1;
+    z-index: 1;
+}
+
+.ricepage_menu-item {
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -55px;
+    border-radius: 50%;
+    background-color: #424242;
+    transform: translate(0px, 0px);
+    transition: transform 500ms, opacity 500ms;
+    z-index: -2;
+    transition: .5s;
+    cursor: pointer;
+}
+
+
+
+.ricepage_menu-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+
+
+/* Positioning 5 items in a circular layout */
+#ricepage_menu:target > .ricepage_menu-item:nth-child(3) {
+    transform: rotate(0deg) translate(280px) rotate(0deg);
+    transition-delay: 0s;
+}
+#ricepage_menu:target > .ricepage_menu-item:nth-child(4) {
+    transform: rotate(72deg) translate(280px) rotate(-72deg);
+    transition-delay: 0.1s;
+}
+#ricepage_menu:target > .ricepage_menu-item:nth-child(5) {
+    transform: rotate(144deg) translate(280px) rotate(-144deg);
+    transition-delay: 0.2s;
+}
+#ricepage_menu:target > .ricepage_menu-item:nth-child(6) {
+    transform: rotate(216deg) translate(280px) rotate(-216deg);
+    transition-delay: 0.3s;
+}
+#ricepage_menu:target > .ricepage_menu-item:nth-child(7) {
+    transform: rotate(288deg) translate(280px) rotate(-288deg);
+    transition-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive styling */
+@media (max-width: 500px) {
+    .ricepage_container {
+        width: 300px;
+        height: 300px;
+    }
+    .ricepage_center-logo {
+        width: 80px;
+        height: 80px;
+    }
+    #ricepage_menu {
+        width: 150px;
+        height: 150px;
+        margin: -75px 0 0 -75px;
+    }
+    .ricepage_menu-button {
+        width: 150px;
+        height: 150px;
+        margin: -75px 0 0 -75px;
+    }
+    .ricepage_menu-item {
+        width: 70px;
+        height: 70px;
+        margin: -35px;
+    }
+    #ricepage_menu:target > .ricepage_menu-item:nth-child(3) { transform: rotate(0deg) translate(100px) rotate(0deg); }
+    #ricepage_menu:target > .ricepage_menu-item:nth-child(4) { transform: rotate(72deg) translate(100px) rotate(-72deg); }
+    #ricepage_menu:target > .ricepage_menu-item:nth-child(5) { transform: rotate(144deg) translate(100px) rotate(-144deg); }
+    #ricepage_menu:target > .ricepage_menu-item:nth-child(6) { transform: rotate(216deg) translate(100px) rotate(-216deg); }
+    #ricepage_menu:target > .ricepage_menu-item:nth-child(7) { transform: rotate(288deg) translate(100px) rotate(-288deg); }
+    #leftImage{
+    
+        display: none;
+    
+}
+#rightImage{
+    display: none;
+}
+}
+
+/* .animimain img {
+    height: 100px;
+    border-radius: 50%;
+} */
+
+.hidden {
+    transform: translateX(680px); /* Move left image away */
+}
+
+.hidden-right {
+    transform: translateX(-680px); /* Move right image away */
+}
+
+
+
+.sideimage-container {
+    display: flex;
+    align-items: center;
+  
+    transition: transform 1.5s ease; /* Slow transition */
+}
+#leftImage{
+    height: 100px;
+    border-radius: 50%;
+}
+#rightImage{
+    height: 100px;
+    border-radius: 50%;
+}
